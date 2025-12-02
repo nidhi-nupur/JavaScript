@@ -247,3 +247,68 @@ console.log(regularUser.hasOwnProperty("regUserFullName"));           // Output:
 console.log(regularUser.hasOwnProperty("regUserFirstName"));          // Output: false
 
 /* ___________________________________________________________________________________________________________ */
+
+
+/* _______________________________________________ Object Desctructuring & JSON API  ____________________________________________________________ */
+/* What is Object Desctructuring?
+Object Destructuring is a feature in JavaScript that allows you to extract values from objects and assign them to variables in a concise and readable way.
+
+Syntax of Object Destructuring:
+const { key1, key2, ... } = obj;
+*/
+// Example of Object Destructuring:
+const { regUserEmail, regUserFullName: rUFN } = regularUser;
+console.log(regUserEmail);                         // Output: iamnidhinupur@gmail.com
+// console.log(regUserFullName);                      // Output: Error
+console.log(rUFN);                                 // Output: { regularUserOrignalName: { regUserFirstName: 'Nidhi', regUserLastName: 'Nupur' } }
+
+/* What is JSON API?
+JSON API is a way to exchange data between a client and a server in a structured and efficient manner. It is a protocol that defines how data should be formatted and transmitted between the client and the server.
+
+Syntax of JSON API:
+JSON.parse(str)
+JSON.stringify(obj)
+*/
+// Example of JSON API:
+const jsonUser = JSON.stringify(regularUser);       // Convert object to JSON string
+console.log(jsonUser);                             // Output: { regUserEmail: 'iamnidhinupur@gmail.com', regUserFullName: { regularUserOrignalName: { regUserFirstName: 'Nidhi', regUserLastName: 'Nupur' } } }
+
+
+/* API Example */
+/* OBJECT API:-
+{
+    "name": "Nidhi",
+    "age": 20,
+    "isMajor": true
+},
+{
+    "name": "Nupur",
+    "age": 20,
+    "isMajor": true
+},
+{
+    "name": "Nidhi",
+    "age": 20,
+    "isMajor": true
+} 
+
+ARRAY API:-
+[
+    {
+        "name": "Nidhi",
+        "age": 20,
+        "isMajor": true
+    },
+    {
+        "name": "Nupur",
+        "age": 20,
+        "isMajor": true
+    },
+    {
+        "name": "Nidhi",
+        "age": 20,
+        "isMajor": true
+    }
+] 
+*/
+/* ___________________________________________________________________________________________________________ */
