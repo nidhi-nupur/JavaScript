@@ -50,7 +50,6 @@ console.log(userLoggedIn("Nidhi"));                 // Output: Nidhi just logged
 console.log(userLoggedIn());                     // Output: Please enter a username
 console.log(userLoggedIn("Nidhi", true));         // Output: Nidhi just logged in
 
-
 // One example for Default parameters (username2 = "Nidhi")
 function userLoggedIn2(username2 = "Nidhi") {
     if (username2 === undefined) {
@@ -61,10 +60,51 @@ function userLoggedIn2(username2 = "Nidhi") {
 }
 console.log(userLoggedIn2());      // Output: Nidhi just logged in
 console.log(userLoggedIn2("Nupur")); // Output: Nupur just logged in
-
 /* _____________________________________________________________________________________________________________________________________ */
 
+/* __________________________________________ JS Functions with Objects and Arrays_________________________________________________________________________________________ */
+/* Rest Operator:
+Rest Operator is used to pass multiple arguments to a function.
+Rest Operator is denoted by (...args)
+*/
+function calculateTotal(...numbers) {
+    let total = 0;
+    for (let num of numbers) {            // can be written as for (let num in numbers) or for (let i = 0; i < numbers.length; i++)
+        total += num;                     // can be written as total += numbers[i];
+    }
+    return total;
+}
+console.log(calculateTotal(10, 20, 30)); // Output: 60
+console.log(calculateTotal(10, 20, 30, 40)); // Output: 100
+
+
+/* Spread Operator:
+Spread Operator is used to pass multiple arguments to a function.
+Spread Operator is denoted by (...args)
+*/
+function calculateTotal2(...numbers) {
+    let total = 0;
+    for (let num of numbers) {
+        total += num;
+    }
+    return total;
+}
+console.log(calculateTotal2(10, 20, 30)); // Output: 60
+console.log(calculateTotal2(10, 20, 30, 40)); // Output: 100
 /* _____________________________________________________________________________________________________________________________________ */
 
+/* ___________________________________ handleObject__________________________________________________________________________________________________ */
 
+function handleObject(anyObject) {
+    console.log(`User name is ${anyObject.name} and age is ${anyObject.age}`);
+}
+handleObject({ name: "Nidhi", age: 22 });
+
+
+
+/* Return 2nd value from an Array */
+function returnSecondValue(getArray) {
+    return getArray[1];
+}
+console.log(returnSecondValue([10, 20, 30])); // Output: 20
 /* _____________________________________________________________________________________________________________________________________ */
