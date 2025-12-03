@@ -108,3 +108,31 @@ function returnSecondValue(getArray) {
 }
 console.log(returnSecondValue([10, 20, 30])); // Output: 20
 /* _____________________________________________________________________________________________________________________________________ */
+
+/* ________________________________________ Ways to declare a function ________________________________________ */
+
+// 1. Function Declaration
+function k() {
+    console.log("Hello");
+}
+k()
+
+
+// 2. Function Expression
+const l = function () {
+    console.log("Hello");
+}
+l()
+
+// 3. Arrow Function
+// m()   // Will throw an error because arrow function is not hoisted (means it cannot be called before its declaration)
+const m = () => {
+    console.log("Hello");
+}
+m()
+
+// 4. Function Constructor
+const n = new Function("console.log('Hello')");
+n()
+
+/* ____________________________________________________________________________________________________________ */

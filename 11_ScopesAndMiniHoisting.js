@@ -87,5 +87,27 @@ function f() {
     console.log(f1);                                // Output: undefined    
 }
 f();
+/* ____________________________________________________________________________________________________________ */
+/* ________________________________________ Nested Scope ____________________________________________________________________ */
+// Example Nested Function Scope
+function i() {
+    let i1 = 10                   // i1 is in global scope
+    function j() {
+        let i1 = 100              // i1 is in local scope
+        console.log(i1);           // Output: 100
+    }
+    j();
+    console.log(i1);               // Output: 10
+}
+i();
 
+// Example Nested condition Scope
+if (true) {
+    let j1 = 10;
+    if (true) {
+        let j1 = 100;
+        console.log(j1);           // Output: 100
+    }
+    console.log(j1);               // Output: 10
+}
 /* ____________________________________________________________________________________________________________ */
